@@ -51,12 +51,12 @@ config :spark,
 config :ash_studio_demo,
   ecto_repos: [AshStudioDemo.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_domains: [AshStudioDemo.Accounts]
+  ash_domains: [AshStudio.Tasks, AshStudioDemo.Accounts]
 
 config :ash_studio,
+  ash_domains: [AshStudio.Tasks],
   host_app: :ash_studio_demo,
-  open_ai_model: "gpt-4o-mini",
-  ash_domains: [AshStudio.Tasks]
+  open_ai_model: "gpt-4o-mini"
 
 # Configures the endpoint
 config :ash_studio_demo, AshStudioDemoWeb.Endpoint,
