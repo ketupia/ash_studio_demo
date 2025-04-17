@@ -51,7 +51,7 @@ config :spark,
 config :ash_studio_demo,
   ecto_repos: [AshStudioDemo.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_domains: [AshStudio.Tasks, AshStudioDemo.Accounts]
+  ash_domains: [AshStudio.Tasks, AshStudioDemo.Accounts, Tunez.Music]
 
 config :ash_studio,
   ash_domains: [AshStudio.Tasks],

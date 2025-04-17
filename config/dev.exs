@@ -59,7 +59,8 @@ config :ash_studio_demo, AshStudioDemoWeb.Endpoint,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/ash_studio_demo_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/ash_studio_demo_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"lib/Tunez/.*(ex|heex)$"
     ]
   ]
 
