@@ -43,3 +43,4 @@ Dockerfile
 .elixir_ls
 .DS_Store
 /config/.env.exs
+.iex.exs
