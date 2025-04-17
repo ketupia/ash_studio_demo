@@ -28,9 +28,7 @@ defmodule AshStudioDemo.MixProject do
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  # Specifies your project dependencies.
-  #
-  # Type `mix help deps` for examples and options.
+  # Updated dependencies to resolve potential issues
   defp deps do
     [
       {:ash, "~> 3.0"},
@@ -40,9 +38,8 @@ defmodule AshStudioDemo.MixProject do
       {:ash_phoenix, "~> 2.0"},
       {:ash_postgres, "~> 2.0"},
       {:ash_studio, github: "ketupia/ash-studio"},
-      # {:ash_studio, path: "../ash_studio"},
       {:bandit, "~> 1.5"},
-      {:credo, "~> 1.0"},
+      {:credo, "~> 1.0", only: [:dev, :test], runtime: false},
       {:dns_cluster, "~> 0.1.1"},
       {:ecto_sql, "~> 3.10"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
