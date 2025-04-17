@@ -35,6 +35,22 @@ defmodule AshStudioDemoWeb.Router do
       #
       # If an authenticated user must *not* be present:
       # on_mount {AshStudioDemoWeb.LiveUserAuth, :live_no_user}
+
+      live "/test", TestLive
+    end
+  end
+
+  scope "/", Tunez do
+    pipe_through :browser
+
+    ash_authentication_live_session :tunez_authenticated_routes do
+      live "/artists", Artists.IndexLive
+      live "/artists/new", Artists.FormLive, :index
+      live "/artists/:id", Artists.ShowLive, :index
+      live "/artists/:id/edit", Artists.FormLive, :edit
+
+      live "/artists/:artist_id/albums/new", Albums.FormLive, :new
+      live "/albums/:id/edit", Albums.FormLive, :edit
     end
   end
 

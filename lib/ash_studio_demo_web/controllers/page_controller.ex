@@ -4,7 +4,7 @@ defmodule AshStudioDemoWeb.PageController do
   def home(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
-    redirect(conn, to: "/studio")
+    redirect(conn, to: "/artists")
     # render(conn, :home, layout: false)
   end
 end
