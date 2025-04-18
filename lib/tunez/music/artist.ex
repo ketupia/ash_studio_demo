@@ -13,6 +13,10 @@ defmodule Tunez.Music.Artist do
     repo AshStudioDemo.Repo
   end
 
+  resource do
+    description "A band or performer"
+  end
+
   actions do
     defaults [:create, :read, :update, :destroy]
     default_accept [:name, :biography]

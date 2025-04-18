@@ -12,6 +12,10 @@ defmodule Tunez.Music.Album do
     repo AshStudioDemo.Repo
   end
 
+  resource do
+    description "A collection of songs"
+  end
+
   actions do
     defaults [:create, :read, :update, :destroy]
     default_accept [:artist_id, :name, :year_released, :cover_image_url]

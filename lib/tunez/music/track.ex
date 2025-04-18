@@ -13,6 +13,10 @@ defmodule Tunez.Music.Track do
     repo AshStudioDemo.Repo
   end
 
+  resource do
+    description "A track on an album"
+  end
+
   actions do
     defaults [:create, :read, :update, :destroy]
     default_accept [:album_id, :name, :duration_seconds, :number]

@@ -24,4 +24,8 @@ defmodule Tunez.Music do
 
     resource Tunez.Music.Track
   end
+
+  domain do
+    description "The Tunez Music domain from the book"
+  end
 end
