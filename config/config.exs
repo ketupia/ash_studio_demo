@@ -54,6 +54,7 @@ config :ash_studio_demo,
   ash_domains: [AshStudio.Tasks, AshStudio.Info, AshStudioDemo.Accounts, Tunez.Music]
 
 config :ash_studio,
+  check_migrations: true,
   ash_domains: [AshStudio.Tasks, AshStudio.Info],
   host_app: :ash_studio_demo,
   open_ai_model: "gpt-4o-mini"
