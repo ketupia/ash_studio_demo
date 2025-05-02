@@ -5,7 +5,8 @@ defmodule Tunez.Music.Album do
   use Ash.Resource,
     otp_app: :ash_studio_demo,
     domain: Tunez.Music,
-    data_layer: AshPostgres.DataLayer
+    data_layer: AshPostgres.DataLayer,
+    authorizers: [Ash.Policy.Authorizer]
 
   postgres do
     table "tunez_albums"
@@ -19,6 +20,25 @@ defmodule Tunez.Music.Album do
   actions do
     defaults [:create, :read, :update, :destroy]
     default_accept [:artist_id, :name, :year_released, :cover_image_url]
+  end
+
+  policies do
+    policy action_type(:read) do
+      authorize_if always()
+    end
+
+    policy action_type(:update) do
+      authorize_if relates_to_actor_via(:created_by)
+      forbid_if always()
+    end
+
+    policy action_type(:create) do
+      authorize_if always()
+    end
+
+    policy action_type(:destroy) do
+      forbid_if always()
+    end
   end
 
   attributes do
@@ -43,6 +63,10 @@ defmodule Tunez.Music.Album do
     end
 
     has_many :tracks, Tunez.Music.Track
+
+    belongs_to :created_by, AshStudioDemo.Accounts.User do
+      allow_nil? true
+    end
   end
 
   calculations do

@@ -10,7 +10,6 @@ defmodule Tunez.Seeder do
   alias Tunez.Music.Album
   alias Tunez.Music.Track
 
-  @spec artists :: list(%{name: binary(), biography: binary()})
   def artists do
     [
       %{
@@ -213,14 +212,6 @@ defmodule Tunez.Seeder do
     ]
   end
 
-  @spec albums ::
-          list(%{
-            name: binary(),
-            artist_name: binary(),
-            year_released: integer(),
-            cover_image_url: binary(),
-            tracks: list(%{name: binary(), duration: binary(), duration_seconds: integer()})
-          })
   def albums do
     [
       %{
